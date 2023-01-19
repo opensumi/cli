@@ -7,7 +7,7 @@ import ora from 'ora';
 import execa from 'execa';
 import copy from 'kopy';
 
-import { npmClient, opensumiInfraDir } from '../const';
+import { npmClient, opensumiInfraDir, defaultTemplatePkg, templateConfigFile } from '../const';
 
 type PureInitOptions = {
   templateData: string
@@ -16,8 +16,6 @@ type PureInitOptions = {
 }
 
 const fsPromise = fs.promises;
-
-const defaultTemplatePkg = '@opensumi/simple-extension-template';
 
 const spinner = ora();
 
@@ -76,7 +74,7 @@ export async function pureInit(pureInitOptions: PureInitOptions) {
 
   try {
     const targetTemplatePath = path.resolve(templateDir, 'node_modules', targetTemplatePkg);
-    const { move } = require(path.resolve(targetTemplatePath, 'opensumi-template.config.js'));
+    const { move } = require(path.resolve(targetTemplatePath, templateConfigFile));
 
     const targetDir = targetPath || process.cwd();
 
@@ -99,7 +97,7 @@ async function init(targetPath: string, targetTemplatePkg: string) {
 
   try {
     const targetTemplatePath = path.resolve(templateDir, 'node_modules', targetTemplatePkg);
-    const { questions, move } = require(path.resolve(targetTemplatePath, 'opensumi-template.config.js'));
+    const { questions, move } = require(path.resolve(targetTemplatePath, templateConfigFile));
 
     const answers = await inquirer.prompt<any>(questions);
 

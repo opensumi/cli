@@ -3,7 +3,11 @@ import os from 'os';
 
 export const npmClient = 'npm';
 
-export const enginePkgName = '';
+export const enginePkgName = '@opensumi/opensumi-cli-engine';
+
+export const defaultTemplatePkg = '@opensumi/simple-extension-template';
+
+export const templateConfigFile = 'opensumi-template.config.js';
 
 export const opensumiInfraDir = path.resolve(os.homedir(), '.opensumi-cli');
 
