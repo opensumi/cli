@@ -6,7 +6,7 @@
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.36.0",
-    "kaitian": "^1.8.30"
+    "opensumi": "^1.8.30"
   },
   "categories": [
     "Other"

@@ -123,3 +123,5 @@ tmpdir
 
 .idea
 .vscode
+
+**/package-lock.json

@@ -2,7 +2,7 @@ module.exports = {
   move: {
     _gitignore: '.gitignore',
     _vscodeignore: '.vscodeignore',
-    _ktignore: '.ktignore',
+    _sumiignore: '.sumiignore',
   },
   questions: [
     {

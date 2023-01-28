@@ -760,7 +760,7 @@ function toContentTypes(files) {
 exports.toContentTypes = toContentTypes;
 const defaultIgnore = [
   '.vscodeignore',
-  '.ktignore',
+  '.sumiignore',
   'package-lock.json',
   'yarn.lock',
   '.editorconfig',
@@ -804,13 +804,13 @@ function collectAllFiles(cwd, useYarn = false, dependencyEntryPoints, noProd) {
   });
 }
 function resolveIgnoreFile(cwd) {
-  if (fs.existsSync(path.join(cwd, '.ktignore'))) {
-    return path.join(cwd, '.ktignore');
+  if (fs.existsSync(path.join(cwd, '.sumiignore'))) {
+    return path.join(cwd, '.sumiignore');
   } else if (fs.existsSync(path.join(cwd, '.vscodeignore'))) {
     return path.join(cwd, '.vscodeignore');
   } else {
     console.log(`
-    为了优化构建性能，建议您在项目中创建 .ktignore 文件排除运行时不必要的文件.
+    为了优化构建性能，建议您在项目中创建 .sumiignore 文件排除运行时不必要的文件.
     `);
     return null;
   }
@@ -1030,7 +1030,7 @@ async function pack(options = {}) {
     const jsFiles = files.filter(f => /\.js$/i.test(f.path));
     if (files.length > 5000 || jsFiles.length > 100) {
       console.log(
-        `此插件由 ${files.length} 个文件组成，其中包含 ${jsFiles.length} 个 JavaScript 文件，出于性能原因，建议您仅打包必要运行文件，您还可以通过配置 .ktignore 或 .vscodeignore 文件来排除不必要的文件`,
+        `此插件由 ${files.length} 个文件组成，其中包含 ${jsFiles.length} 个 JavaScript 文件，出于性能原因，建议您仅打包必要运行文件，您还可以通过配置 .sumiignore 或 .vscodeignore 文件来排除不必要的文件`,
       );
     }
     const packagePath = await getPackagePath(cwd, manifest, options);
@@ -1099,7 +1099,7 @@ export class PackageCommand extends Command {
     This command helps you load extension via launching Kaitian IDE.
     - If the \`--skipCompile\` flag is set, kaitian cli will skip run prepublishOnly to compile.
     - If the \`--yarn\` flag is set, kaitian cli will use yarn instead of npm.
-    - The \`--ignoreFile\` option is used to set an alternative file for .ktignore.
+    - The \`--ignoreFile\` option is used to set an alternative file for .sumiignore.
     - The \`-o, --out\` option is used to specify path for .vsix extension file output.
     `,
   });

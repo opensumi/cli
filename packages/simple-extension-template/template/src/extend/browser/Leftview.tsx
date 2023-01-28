@@ -5,7 +5,7 @@ import { Button } from 'sumi-browser';
 import { INodeService } from "../common/service";
 import './style.less';
 
-const defaultTitle = "左侧面板";
+const defaultTitle = "Left Panel";
 
 export const Leftview: React.FC<IComponentProps<INodeService>> = ({
   kaitianExtendSet,

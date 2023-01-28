@@ -19,7 +19,6 @@
 ├── out/                            # 编译输出目录
 ├── CHANGELOG.md
 ├── README.md
-├── kaitian.js                      #  Kaitian 插件描述文件
 ├── package.json
 ├── tsconfig.json
 ├── tslint.json
