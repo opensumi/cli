@@ -58,6 +58,6 @@
   },
   "dependencies": {
     "@opensumi/ide-components": "latest",
-    "antd": "^3.20.3"
+    "antd": "^5.1.6"
   }
 }

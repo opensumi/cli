@@ -663,8 +663,8 @@ function validateManifest(manifest) {
     throw new Error('Manifest missing field: engines');
   }
 
-  if (!manifest.engines['kaitian']) {
-    throw new Error('Manifest missing field: engines.kaitian');
+  if (!manifest.engines['opensumi']) {
+    throw new Error('Manifest missing field: engines.opensumi');
   }
 
   (manifest.badges || []).forEach(badge => {
