@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useState, useEffect } from 'react';
-import { Button } from 'opensumi-browser';
+import { Button } from 'sumi-browser';
 
 import { INodeService } from "../common/service";
 import './style.less';

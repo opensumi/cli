@@ -1,4 +1,4 @@
-import * as opensumi from "opensumi";   // opensumi node API (extends vscode)
+import * as opensumi from "sumi";   // opensumi node API (extends vscode)
 
 export function activate(context: opensumi.ExtensionContext) {
   const { componentProxy, registerExtendModuleService } = context;

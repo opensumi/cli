@@ -8,7 +8,7 @@ const { DefinePlugin } = require('webpack');
 
 const commonExternals = {
   vscode: 'commonjs vscode', // ignored because it doesn't exist
-  kaitian: 'commonjs kaitian', // ignored because it doesn't exist
+  sumi: 'commonjs sumi', // ignored because it doesn't exist
   vm2: 'commonjs vm2', // ignored because it doesn't exist
 };
 
@@ -131,7 +131,7 @@ function withBrowserDefaults(extConfig) {
     },
     externals: {
       ...commonExternals,
-      'kaitian-browser': 'commonjs kaitian-browser', // ignored because it doesn't exist
+      'sumi-browser': 'commonjs sumi-browser', // ignored because it doesn't exist
     },
     performance: {
       hints: false,

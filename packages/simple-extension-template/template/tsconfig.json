@@ -18,10 +18,10 @@
     "strict": false,
     "experimentalDecorators": true,
     "paths": {
-      "opensumi": [
+      "sumi": [
         "./node_modules/@opensumi/sumi"
       ],
-      "opensumi-browser":[
+      "sumi-browser":[
         "./node_modules/@opensumi/sumi"
       ]
     }
