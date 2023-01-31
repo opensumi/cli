@@ -2,9 +2,9 @@
   "name": "@opensumi/cli",
   "version": "1.0.0",
   "description": "A simple CLI for opensumi.",
-  "main": "bin/opensumi.js",
+  "main": "bin/sumi.js",
   "bin": {
-    "opensumi": "bin/opensumi.js"
+    "sumi": "bin/sumi.js"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

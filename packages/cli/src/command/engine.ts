@@ -26,7 +26,7 @@ function getEngineFolderPath(version: string) {
 
 async function updatePkgJSONFile(targetDir: string, version: string) {
   const pkgJsonDesc = {
-    name: '@opensumi/opensumi-engine',
+    name: '@opensumi/engine',
     version,
     dependencies: {
       [enginePkgName]: version,
