@@ -60,7 +60,7 @@ export class PublishCommand extends Command {
     examples: [
       [
         'Examples:',
-        'opensumi publish --file=./my-extension-1.0.0.zip.'
+        'sumi publish --file=./my-extension-1.0.0.zip.'
       ],
     ],
   });

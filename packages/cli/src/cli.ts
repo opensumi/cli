@@ -23,7 +23,7 @@ const pkg = require('../package.json');
 
 const cli = new Cli({
   binaryLabel: 'OpenSumi Extension Development Utility',
-  binaryName: 'opensumi',
+  binaryName: 'sumi',
   binaryVersion: pkg.version,
 });
 

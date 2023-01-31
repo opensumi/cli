@@ -132,7 +132,7 @@ export class WatchCommand extends Command {
     examples: [
       [
         'Run watch mode when developing a opensumi extension project',
-        'opensumi watch',
+        'sumi watch',
       ],
     ],
   });
@@ -150,7 +150,7 @@ export class WatchCommand extends Command {
         useCustomConfig: this.config,
       });
     } catch (err) {
-      console.error('opensumi watch error:', err);
+      console.error('sumi watch error:', err);
       process.exit(1);
     }
   }
@@ -162,7 +162,7 @@ export class CompileCommand extends Command {
     examples: [
       [
         'Compile code when developing a opensumi extension project',
-        'opensumi compile',
+        'sumi compile',
       ],
     ],
   });
@@ -177,7 +177,7 @@ export class CompileCommand extends Command {
         useCustomConfig: this.config,
       });
     } catch (err) {
-      console.error('opensumi watch error:', err);
+      console.error('sumi watch error:', err);
       process.exit(1);
     }
   }
