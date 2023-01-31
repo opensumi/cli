@@ -8,7 +8,7 @@ import { loadConfig } from './load-config';
 
 export const execBasePath = process.cwd();
 
-export const metaFilePath = path.resolve(execBasePath, './kaitian-meta.json');
+export const metaFilePath = path.resolve(execBasePath, './sumi-meta.json');
 
 export const useKeyPathDirect = Symbol('useKeyPath');
 

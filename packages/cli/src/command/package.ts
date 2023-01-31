@@ -172,7 +172,7 @@ class ManifestProcessor extends BaseProcessor {
       displayName: manifest.displayName || manifest.name,
       version: manifest.version,
       publisher: manifest.publisher,
-      engine: manifest.engines.kaitian,
+      engine: manifest.engines.sumi,
       description: manifest.description || '',
       categories: (manifest.categories || []).join(','),
       flags: flags.join(' '),
