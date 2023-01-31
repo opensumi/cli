@@ -33,16 +33,16 @@ const cli = new Cli({
   CompileCommand,
   WatchCommand,
   PackageCommand,
-  PublishCommand,
   EngineLsCommand,
   EngineLsRemoteCommand,
   EngineCurrentCommand,
   EngineUseCommand,
   EngineInstallCommand,
   EngineUninstallCommand,
-  LoginCommand,
   HelpCommand,
   VersionCommand,
+  // PublishCommand,
+  // LoginCommand,
 ].forEach((command) => {
   cli.register(command);
 });

@@ -60,7 +60,7 @@ export function createNodeDefaults(extConfig: ExtensionBundleConfig) {
     },
     externals: {
       vscode: 'commonjs vscode',
-      kaitian: 'commonjs kaitian',
+      sumi: 'commonjs sumi',
     },
     output: {
       filename: '[name].js',
@@ -163,7 +163,7 @@ export function createBrowserDefaults(extConfig: ExtensionBundleConfig) {
     externals: {
       'react': 'React',
       'react-dom': 'ReactDOM',
-      'kaitian-browser': 'kaitian-browser',
+      'sumi-browser': 'sumi-browser',
     },
     performance: {
       hints: false,
@@ -209,8 +209,8 @@ export function createWorkerDefaults(extConfig: ExtensionBundleConfig) {
     },
     externals: {
       vscode: 'vscode',
-      kaitian: 'kaitian',
-      'kaitian-worker': 'kaitian-worker'
+      sumi: 'sumi',
+      'sumi-worker': 'sumi-worker'
     },
     performance: {
       hints: false,

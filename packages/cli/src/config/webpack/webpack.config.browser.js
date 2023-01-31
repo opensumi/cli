@@ -13,6 +13,6 @@ module.exports = (options) => withDefaults({
   externals: {
     'react': 'React',
     'react-dom': 'ReactDOM',
-    'kaitian-browser': 'commonjs kaitian-browser',
+    'sumi-browser': 'commonjs sumi-browser',
   }
 });

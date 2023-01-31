@@ -11,6 +11,6 @@ module.exports = (options) => withDefaults({
 		path: path.join(options.cwd, 'out', 'worker')
   },
   externals: {
-    'kaitian-worker': 'commonjs kaitian-worker',
+    'sumi-worker': 'commonjs sumi-worker',
   }
 });
