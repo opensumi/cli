@@ -53,7 +53,7 @@ async function bundle(compilerMethod: CompilerMethod, options?: RunTaskOptions) 
   if (options && options.useCustomConfig) {
     const webpackConfigPath = path.join(process.cwd(), 'sumi-webpack.config.js');
     if (!(await fse.pathExists(webpackConfigPath))) {
-      throw new Error(`请确保 ${process.cwd()} 目录下包含自定义 webpack 配置`);
+      throw new Error(`Make sure to include your custom webpack config under the ${process.cwd()} directory`);
     }
     const customWebpackConfig = require(webpackConfigPath);
     bundleTasks = doWebpackTasks(toWebpackConfig(customWebpackConfig), compilerMethod, options);

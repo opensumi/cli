@@ -810,7 +810,7 @@ function resolveIgnoreFile(cwd) {
     return path.join(cwd, '.vscodeignore');
   } else {
     console.log(`
-    为了优化构建性能，建议您在项目中创建 .sumiignore 文件排除运行时不必要的文件.
+      To optimize build performance, it is recommended that you create a .sumiignore file in your project to exclude unnecessary files at runtime.
     `);
     return null;
   }
@@ -1030,7 +1030,7 @@ async function pack(options = {}) {
     const jsFiles = files.filter(f => /\.js$/i.test(f.path));
     if (files.length > 5000 || jsFiles.length > 100) {
       console.log(
-        `此插件由 ${files.length} 个文件组成，其中包含 ${jsFiles.length} 个 JavaScript 文件，出于性能原因，建议您仅打包必要运行文件，您还可以通过配置 .sumiignore 或 .vscodeignore 文件来排除不必要的文件`,
+        `This plugin consists of ${files.length} files, including ${jsFiles.length} JavaScript files. For performance reasons, it is recommended that you only package the necessary running files. You can also configure the .sumiignore or .vscodeignore file to Exclude unnecessary files`
       );
     }
     const packagePath = await getPackagePath(cwd, manifest, options);
