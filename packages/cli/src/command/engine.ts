@@ -227,8 +227,8 @@ class EngineModule {
   private async init() {
     const engineList = await this.getInstalledEngines();
     if (!engineList.length) {
-      // console.warn('No engine installed');
-      // console.warn('Please exec `opensumi cli install`');
+      console.warn('No engine installed');
+      console.warn('Please exec `opensumi cli install`');
     }
 
     const config = await opensumiConfiguration.getContent();

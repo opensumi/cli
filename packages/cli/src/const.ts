@@ -3,17 +3,17 @@ import os from 'os';
 
 export const npmClient = 'npm';
 
-export const enginePkgName = '@opensumi/opensumi-cli-engine';
+export const enginePkgName = '@opensumi/cli-engine';
 
 export const defaultTemplatePkg = '@opensumi/simple-extension-template';
 
-export const templateConfigFile = 'opensumi-template.config.js';
+export const templateConfigFile = 'sumi-template.config.js';
 
-export const opensumiInfraDir = path.resolve(os.homedir(), '.opensumi-cli');
-
-export const marketplaceApiAddress = '';
+export const opensumiInfraDir = path.resolve(os.homedir(), '.sumi-cli');
 
 export const configYmlPath = path.resolve(opensumiInfraDir, 'config.yml');
+
+export const marketplaceApiAddress = '';
 
 export const marketplaceAccountId = '';
 
