@@ -51,7 +51,7 @@ type RunTaskOptions = {
 async function bundle(compilerMethod: CompilerMethod, options?: RunTaskOptions) {
   let bundleTasks: (() => Promise<void>)[] = [];
   if (options && options.useCustomConfig) {
-    const webpackConfigPath = path.join(process.cwd(), 'kaitian-webpack.config.js');
+    const webpackConfigPath = path.join(process.cwd(), 'sumi-webpack.config.js');
     if (!(await fse.pathExists(webpackConfigPath))) {
       throw new Error(`请确保 ${process.cwd()} 目录下包含自定义 webpack 配置`);
     }
@@ -81,7 +81,7 @@ function runTask(webpackConfig: any, compilerMethod: CompilerMethod, options?: R
       }
 
       console.info(
-        'KAITIAN',
+        'SUMI',
         stats.toString({
           assets: true,
           colors: true,
@@ -98,10 +98,10 @@ function runTask(webpackConfig: any, compilerMethod: CompilerMethod, options?: R
       if (isSuccessful) {
         // @ts-ignore
         if (stats.stats) {
-          console.info('KAITIAN', 'Compiled successfully');
+          console.info('SUMI', 'Compiled successfully');
         } else {
           console.info(
-            'KAITIAN',
+            'SUMI',
             `Compiled successfully in ${(json.time / 1000).toFixed(1)}s!`,
           );
         }
@@ -109,7 +109,7 @@ function runTask(webpackConfig: any, compilerMethod: CompilerMethod, options?: R
       } else if (messages.errors.length) {
         console.log(messages.errors.join('\n\n'));
       } else if (messages.warnings.length) {
-        console.warn('KAITIAN', 'Compiled with warnings.');
+        console.warn('SUMI', 'Compiled with warnings.');
         console.log(messages.warnings.join('\n\n'));
       }
 
@@ -131,8 +131,8 @@ export class WatchCommand extends Command {
     description: 'watch extension in development mode',
     examples: [
       [
-        'Run watch mode when developing a kaitian extension project',
-        'kaitian watch',
+        'Run watch mode when developing a opensumi extension project',
+        'opensumi watch',
       ],
     ],
   });
@@ -150,7 +150,7 @@ export class WatchCommand extends Command {
         useCustomConfig: this.config,
       });
     } catch (err) {
-      console.error('kaitian watch error:', err);
+      console.error('opensumi watch error:', err);
       process.exit(1);
     }
   }
@@ -161,8 +161,8 @@ export class CompileCommand extends Command {
     description: 'compile extension in production mode',
     examples: [
       [
-        'Compile code when developing a kaitian extension project',
-        'kaitian compile',
+        'Compile code when developing a opensumi extension project',
+        'opensumi compile',
       ],
     ],
   });
@@ -177,7 +177,7 @@ export class CompileCommand extends Command {
         useCustomConfig: this.config,
       });
     } catch (err) {
-      console.error('kaitian watch error:', err);
+      console.error('opensumi watch error:', err);
       process.exit(1);
     }
   }

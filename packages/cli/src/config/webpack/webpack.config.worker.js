@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = (options) => withDefaults({
 	context: path.join(options.cwd),
 	entry: {
-		'KAITIAN-WORKER': path.join(options.cwd, 'src/extend/worker/index.ts'),
+		'SUMI-WORKER': path.join(options.cwd, 'src/extend/worker/index.ts'),
 	},
 	output: {
 		filename: 'index.js',

@@ -2,7 +2,7 @@ import { PublishCommand } from '../../src/command/publish';
 import { runCli } from '../utils';
 import path from 'path';
 
-describe('kaitian publish', () => {
+describe('sumi publish', () => {
 
   const OLD_ENV = process.env;
 

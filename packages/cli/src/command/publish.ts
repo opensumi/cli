@@ -55,12 +55,12 @@ export class PublishCommand extends Command {
     This command helps you publish your extension via cli.
     - The \`--file\` option is used to publish the extension package located at the specified path.
     - The \`--ignoreFile\` option is used to set an alternative file for .sumiignore.
-    - If the \`--skipCompile\` flag is set, kaitian cli will skip run prepublishOnly to compile.
+    - If the \`--skipCompile\` flag is set, opensumi cli will skip run prepublishOnly to compile.
     `,
     examples: [
       [
         'Examples:',
-        'kaitian publish --file=./my-extension-1.0.0.zip.'
+        'opensumi publish --file=./my-extension-1.0.0.zip.'
       ],
     ],
   });

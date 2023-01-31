@@ -37,7 +37,7 @@ function validateVersion(version) {
 exports.validateVersion = validateVersion;
 function validateEngineCompatibility(version) {
   if (!version) {
-    throw new Error(`Missing vscode or kaitian engine compatibility version`);
+    throw new Error(`Missing vscode or sumi engine compatibility version`);
   }
   // eslint-disable-next-line no-useless-escape
   if (!/^\*$|^(\^|>=)?((\d+)|x)\.((\d+)|x)\.((\d+)|x)(\-.*)?$/.test(version)) {

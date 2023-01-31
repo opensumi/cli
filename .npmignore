@@ -1,6 +1,6 @@
 packages/
 .vscode/
-.kaitian/
+.sumi/
 configs/scripts
 configs/*.json
 configs/*.js

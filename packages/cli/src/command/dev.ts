@@ -127,7 +127,7 @@ function dev(args: any) {
       ...extensionCandidateStr,
     ]);
 
-    console.log("Start Kaitian Process", "argv", argv.join(" "));
+    console.log("Start OpenSumi Process", "argv", argv.join(" "));
 
     const options = {
       env: {
@@ -181,14 +181,14 @@ function dev(args: any) {
 
 export class DevCommand extends Command {
   static usage = Command.Usage({
-    description: 'launch Kaitian IDE load specified extension',
+    description: 'launch OpenSumi IDE load specified extension',
     details: `
-    This command helps you load extension via launching Kaitian IDE.
+    This command helps you load extension via launching OpenSumi IDE.
     - If the \`-d,--debug\` flag is set, debug mode will be enabled.
-    - The \`-p,--serverPort\` option is used to set Kaitian IDE server port.
+    - The \`-p,--serverPort\` option is used to set OpenSumi IDE server port.
     - The \`-w,--workspaceDir\` option is used to set workspace path (default is the current directory).
     - The \`-e,--extensionDir\` option is used to set extension folder path (default is the current directory), support to specify multiple plug-ins, separated by commas.
-    - The \`--execute\` option is used to set Kaitian IDE executable file directory.
+    - The \`--execute\` option is used to set OpenSumi IDE executable file directory.
     `,
   });
 

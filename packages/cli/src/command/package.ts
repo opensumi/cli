@@ -1094,11 +1094,11 @@ exports.ls = ls;
 
 export class PackageCommand extends Command {
   static usage = Command.Usage({
-    description: 'launch Kaitian IDE load specified extension',
+    description: 'launch OpenSumi IDE load specified extension',
     details: `
-    This command helps you load extension via launching Kaitian IDE.
-    - If the \`--skipCompile\` flag is set, kaitian cli will skip run prepublishOnly to compile.
-    - If the \`--yarn\` flag is set, kaitian cli will use yarn instead of npm.
+    This command helps you load extension via launching OpenSumi IDE.
+    - If the \`--skipCompile\` flag is set, opensumi cli will skip run prepublishOnly to compile.
+    - If the \`--yarn\` flag is set, opensumi cli will use yarn instead of npm.
     - The \`--ignoreFile\` option is used to set an alternative file for .sumiignore.
     - The \`-o, --out\` option is used to specify path for .vsix extension file output.
     `,

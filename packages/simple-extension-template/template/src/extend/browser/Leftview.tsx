@@ -8,8 +8,8 @@ import './style.less';
 const defaultTitle = "Left Panel";
 
 export const Leftview: React.FC<IComponentProps<INodeService>> = ({
-  kaitianExtendSet,
-  kaitianExtendService,
+  sumiExtendSet,
+  sumiExtendService,
 }) => {
   const [title, setTitle] = useState(defaultTitle);
 
@@ -18,15 +18,15 @@ export const Leftview: React.FC<IComponentProps<INodeService>> = ({
   }
 
   useEffect(() => {
-    if (kaitianExtendSet) {
-      kaitianExtendSet.set({
+    if (sumiExtendSet) {
+      sumiExtendSet.set({
         updateTitle: onDidUpdateTitle,
       });
     }
   }, []);
 
   function clickHandler() {
-    kaitianExtendService.node.sayHello().then(msg => {
+    sumiExtendService.node.sayHello().then(msg => {
       console.log("Leftview receive message", msg);
     });
   }

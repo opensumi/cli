@@ -4,9 +4,9 @@ import importFresh from 'import-fresh'
 import stripComments from 'strip-json-comments'
 
 const configFilenames = [
-  'kaitian.config.js',
-  'kaitian.config.cjs',
-  'kaitian.config.json',
+  'sumi.config.js',
+  'sumi.config.cjs',
+  'sumi.config.json',
   'package.json',
 ];
 
