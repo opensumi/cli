@@ -57,7 +57,6 @@
     "@opensumi/sumi": "latest"
   },
   "dependencies": {
-    "@opensumi/ide-components": "latest",
-    "antd": "^5.1.6"
+    "@opensumi/ide-components": "latest"
   }
 }

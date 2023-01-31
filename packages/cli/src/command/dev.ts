@@ -181,7 +181,7 @@ function dev(args: any) {
 
 export class DevCommand extends Command {
   static usage = Command.Usage({
-    description: 'launch OpenSumi IDE load specified extension',
+    description: 'Launch OpenSumi IDE with specified extension',
     details: `
     This command helps you load extension via launching OpenSumi IDE.
     - If the \`-d,--debug\` flag is set, debug mode will be enabled.
