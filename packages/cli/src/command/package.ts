@@ -810,7 +810,7 @@ function resolveIgnoreFile(cwd) {
     return path.join(cwd, '.vscodeignore');
   } else {
     console.log(`
-      To optimize build performance, it is recommended that you create a .sumiignore file in your project to exclude unnecessary files at runtime.
+    To optimize build performance, it is recommended that you create a \`.sumiignore\` file in your project to exclude unnecessary files at runtime.
     `);
     return null;
   }
@@ -1030,7 +1030,7 @@ async function pack(options = {}) {
     const jsFiles = files.filter(f => /\.js$/i.test(f.path));
     if (files.length > 5000 || jsFiles.length > 100) {
       console.log(
-        `This plugin consists of ${files.length} files, including ${jsFiles.length} JavaScript files. For performance reasons, it is recommended that you only package the necessary running files. You can also configure the .sumiignore or .vscodeignore file to Exclude unnecessary files`
+        `This plugin consists of ${files.length} files, including ${jsFiles.length} JavaScript files. For performance reasons, it is recommended that you only package the necessary running files. You can also configure the \`.sumiignore\` or \`.vscodeignore\` file to Exclude unnecessary files`
       );
     }
     const packagePath = await getPackagePath(cwd, manifest, options);
