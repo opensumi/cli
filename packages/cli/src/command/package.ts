@@ -1098,10 +1098,10 @@ export class PackageCommand extends Command {
     details: `
     This command helps you package your extension via cli.
     - The \`-o, --out\` option is used to specify path for .vsix extension file output.
-    - If the \`--yarn\` flag is set, opensumi cli will use yarn instead of npm.
+    - If the \`--yarn\` flag is set, OpenSumi CLI will use yarn instead of npm.
     - The \`--ignoreFile\` option is used to set an alternative file for .sumiignore.
-    - If the \`--skipCompile\` flag is set, opensumi cli will skip run prepublishOnly to compile.
-    - If the \`--no-prod\` flag is set, opensumi cli will package non-production modules when use yarn.
+    - If the \`--skipCompile\` flag is set, OpenSumi CLI will skip run prepublishOnly to compile.
+    - If the \`--no-prod\` flag is set, OpenSumi CLI will package non-production modules when use yarn.
     `,
   });
 

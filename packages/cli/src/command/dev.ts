@@ -56,7 +56,7 @@ function dev(args: any) {
       options.env.IS_DEV = '1';
     }
 
-    console.log(`cli args: ${argv.join(' ')}`);
+    console.log(`CLI args: ${argv.join(' ')}`);
     const electronProcess = cp.execFile(args.execute, argv, options);
     if (electronProcess.stdout) {
       electronProcess.stdout.addListener('data', (e) => {
@@ -187,7 +187,7 @@ export class DevCommand extends Command {
     - If the \`-d,--debug\` flag is set, debug mode will be enabled.
     - The \`-p,--serverPort\` option is used to set OpenSumi IDE server port.
     - The \`-w,--workspaceDir\` option is used to set workspace path (default is the current directory).
-    - The \`-e,--extensionDir\` option is used to set extension folder path (default is the current directory), support to specify multiple plug-ins, separated by commas.
+    - The \`-e,--extensionDir\` option is used to set extension folder path (default is the current directory), support to specify multiple extensions, separated by commas.
     - The \`--execute\` option is used to set OpenSumi IDE executable file directory.
     `,
   });
