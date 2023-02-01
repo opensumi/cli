@@ -1094,13 +1094,14 @@ exports.ls = ls;
 
 export class PackageCommand extends Command {
   static usage = Command.Usage({
-    description: 'launch OpenSumi IDE load specified extension',
+    description: 'Package the extension',
     details: `
-    This command helps you load extension via launching OpenSumi IDE.
-    - If the \`--skipCompile\` flag is set, opensumi cli will skip run prepublishOnly to compile.
+    This command helps you package your extension via cli.
+    - The \`-o, --out\` option is used to specify path for .vsix extension file output.
     - If the \`--yarn\` flag is set, opensumi cli will use yarn instead of npm.
     - The \`--ignoreFile\` option is used to set an alternative file for .sumiignore.
-    - The \`-o, --out\` option is used to specify path for .vsix extension file output.
+    - If the \`--skipCompile\` flag is set, opensumi cli will skip run prepublishOnly to compile.
+    - If the \`--no-prod\` flag is set, opensumi cli will package non-production modules when use yarn.
     `,
   });
 
