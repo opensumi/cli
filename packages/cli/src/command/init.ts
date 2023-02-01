@@ -38,17 +38,17 @@ async function ensurePkgJSONFile(targetDir: string) {
 
 function logMsg() {
   console.log(`
-    插件初始化成功.
-    依次执行以下命令开始插件开发:
+    Extension initialization succeeded
+    Execute the following commands to start extension development:
 
     ${chalk.yellow('  npm install')}
     ${chalk.yellow('  npm run watch')}
 
-    编译插件.
+    Compile extension.
     ${chalk.yellow('  npm run compile')}
 
-    打包插件.
-    ${chalk.yellow('  opensumi package')}
+    package extension.
+    ${chalk.yellow('  sumi package')}
 
     Happy hacking!
   `);
@@ -119,7 +119,7 @@ export class InitCommand extends Command {
     examples: [
       [
         'Initialize a opensumi extension project in target-folder',
-        'cd target-folder && opensumi init',
+        'cd target-folder && sumi init',
       ],
     ],
   });
@@ -164,7 +164,7 @@ export class InitCommand extends Command {
       } as PureInitOptions))
       : (await init(this.realTargetDir, this.scaffold));
     } catch (err) {
-      console.error('opensumi init error:', err);
+      console.error('sumi init error:', err);
       process.exit(1);
     }
   }
