@@ -47,7 +47,7 @@ function logMsg() {
     Compile extension.
     ${chalk.yellow('  npm run compile')}
 
-    package extension.
+    Package extension.
     ${chalk.yellow('  sumi package')}
 
     Happy hacking!
