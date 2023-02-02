@@ -41,9 +41,9 @@
   },
   "scripts": {
     "prepublishOnly": "npm run compile",
-    "compile": "opensumi compile",
-    "watch": "opensumi watch",
-    "dev": "opensumi dev -e=$(pwd)"
+    "compile": "sumi compile",
+    "watch": "sumi watch",
+    "dev": "sumi dev -e=$(pwd)"
   },
   "devDependencies": {
     "@types/node": "^10.12.21",
