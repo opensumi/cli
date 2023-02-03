@@ -16,21 +16,22 @@ $ npm install @opensumi/cli -g
 ```
 $ sumi engine ls-remote
 
-                    2.1.0
-                 -> 2.1.1   latest
+   2.1.0
+-> 2.1.1   latest
 ```
 
 ```
 $ sumi engine add <version>
 
-  Engine@v<version> was installed
+Engine@v<version> was installed
 ```
 
 #### Start Development
 ```
 $ mkdir opensumi-ext-demo && cd opensumi-ext-demo
 $ sumi init
-$ npm run watch && sumi dev
+$ npm run watch
+$ sumi dev
 ```
 
 ## Usage
