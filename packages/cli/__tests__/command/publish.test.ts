@@ -39,8 +39,8 @@ describe('sumi publish', () => {
   });
 
   it('publish extension without ak will throw error', async () => {
-    process.env.KT_EXT_ACCOUNT_ID = '';
-    process.env.KT_EXT_MASTER_KEY = '';
+    process.env.EXTENSIOM_MARKETPLACE_ACCOUNT_ID = '';
+    process.env.EXTENSIOM_MARKETPLACE_MASTER_KEY = '';
     expect(await runCli(() => [PublishCommand], [
       'publish',
       '--file', path.join(__dirname, '../features/extension.zip'),
@@ -48,8 +48,8 @@ describe('sumi publish', () => {
   });
 
   it('publish extension with privateToken', async () => {
-    process.env.KT_EXT_ACCOUNT_ID = '';
-    process.env.KT_EXT_MASTER_KEY = '';
+    process.env.EXTENSIOM_MARKETPLACE_ACCOUNT_ID = '';
+    process.env.EXTENSIOM_MARKETPLACE_MASTER_KEY = '';
     expect(await runCli(() => [PublishCommand], [
       'publish',
       '--file', path.join(__dirname, '../features/extension.zip'),

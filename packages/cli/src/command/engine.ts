@@ -34,7 +34,6 @@ async function updatePkgJSONFile(targetDir: string, version: string) {
   };
   const json = JSON.stringify(pkgJsonDesc, null, 2);
   const pkgJSONFilePath = path.join(targetDir, 'package.json');
-  // await fsPromise.open(pkgJSONFilePath, 'w');
   await fsPromise.writeFile(pkgJSONFilePath, json, 'utf8');
 }
 

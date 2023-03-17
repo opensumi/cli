@@ -134,7 +134,7 @@ export class PublishCommand extends Command {
 
     try {
       const res = await urllib.request(
-        `${process.env.KT_EXT_ENDPOINT || marketplaceApiAddress}/extension/upload?${query}`,
+        `${process.env.EXTENSIOM_MARKETPLACE_ENPOINT || marketplaceApiAddress}/extension/upload?${query}`,
         {
           method: 'POST',
           timeout: 2 * 60 * 1000,
@@ -207,10 +207,10 @@ export class PublishCommand extends Command {
     }
 
     let teamAccount: ITeamAccount | undefined = undefined;
-    if (process.env.KT_EXT_ACCOUNT_ID && process.env.KT_EXT_MASTER_KEY) {
+    if (process.env.EXTENSIOM_MARKETPLACE_ACCOUNT_ID && process.env.EXTENSIOM_MARKETPLACE_MASTER_KEY) {
       teamAccount = {
-        accountId: process.env.KT_EXT_ACCOUNT_ID,
-        masterKey: process.env.KT_EXT_MASTER_KEY,
+        accountId: process.env.EXTENSIOM_MARKETPLACE_ACCOUNT_ID,
+        masterKey: process.env.EXTENSIOM_MARKETPLACE_MASTER_KEY,
       }
     } else {
       teamAccount = publisher && await opensumiConfiguration.getTeamAccount(publisher);

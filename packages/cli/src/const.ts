@@ -1,7 +1,7 @@
 import path from 'path';
 import os from 'os';
 
-export const npmClient = 'npm';
+export const npmClient = process.env.NPM_CLIENT || 'npm';
 
 export const enginePkgName = '@opensumi/cli-engine';
 

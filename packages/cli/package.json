@@ -15,8 +15,8 @@
     "lint:fix": "npm run lint -- --fix",
     "compile": "tsc -p tsconfig.json",
     "watch": "tsc -w -p tsconfig.json",
-    "prepublishOnly": "npm run compile || echo 0",
-    "postinstall": "node lib/postinstall.js || echo 0",
+    "prepublishOnly": "npm run compile",
+    "postinstall": "npm run compile && node lib/postinstall.js",
     "test": "jest"
   },
   "dependencies": {
