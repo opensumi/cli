@@ -84,11 +84,12 @@ class EngineModule {
     }
 
     const spinner = ora(`Adding engine@v${version}`).start();
-    await this.installEngine(engineDir, version);
-    spinner.succeed(`Engine@v${version} was installed`);
-    if (!await this.getCurrent()) {
-      await this.setCurrent(version);
-    }
+    return this.installEngine(engineDir, version).then(async () => {
+      spinner.succeed(`Engine@v${version} was installed`);
+      if (!await this.getCurrent()) {
+        await this.setCurrent(version);
+      }
+    });
   }
 
   public async remove(v?: string) {
