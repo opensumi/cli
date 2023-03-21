@@ -1,9 +1,10 @@
-// vscode namespace 下为 VS Code 插件 API
-import * as vscode from "vscode";
+// You can also replace `vscode` as `sumi`.
+import * as vscode from 'vscode';
+import { HELLO_COMMAND } from './extend/common/service';
 
 export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
-    vscode.commands.registerCommand("HelloOpenSumi", async () => {
+    vscode.commands.registerCommand(HELLO_COMMAND, async () => {
       vscode.window.showInformationMessage('Hello OpenSumi');
     })
   );

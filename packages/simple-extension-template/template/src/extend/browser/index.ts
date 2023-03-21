@@ -1,4 +1,4 @@
-import { Leftview } from "./Leftview";
+import { Leftview } from './Leftview';
 
 export {
   Leftview,
