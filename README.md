@@ -2,13 +2,27 @@
 
 🛠️ Standard Tooling for OpenSumi Extensions Development
 
+## Develop
+
+```base
+$ npm install
+$ npm run dev
+```
+
+Test command on the local:
+
+```bash
+$ ./packages/cli/bin/sumi.js <command> [options]
+```
+
 ## Install
 
 ```
 $ npm install @opensumi/cli -g
 ```
 
-#### Quick Start
+## Usage
+
 ```
 $ sumi init opensumi-ext-demo
 $ cd opensumi-ext-demo
@@ -16,7 +30,7 @@ $ npm run watch
 $ sumi dev
 ```
 
-## Usage
+## Commands
 
 ```md
 Usage: sumi <command> [options]

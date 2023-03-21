@@ -8,7 +8,8 @@
   },
   "scripts": {
     "postinstall": "cd packages/cli && npm i",
-    "ci": "cd packages/cli && npm test"
+    "ci": "cd packages/cli && npm test",
+    "dev": "cd packages/cli && npm run watch"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",

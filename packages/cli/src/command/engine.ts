@@ -16,6 +16,8 @@ import { ensureDir } from '../util/fs';
 import { opensumiInfraDir, npmClient, enginePkgName } from '../const';
 import { opensumiConfiguration } from '../config';
 
+export const SUPPORTED_DISTTAGS = ['latest', 'rc', 'next'];
+
 const fsPromise = fs.promises;
 
 const engineDir = path.resolve(opensumiInfraDir, 'engines');
@@ -72,7 +74,7 @@ class EngineModule {
 
   @whenReady
   public async add(v?: string) {
-    const version = this.checkValidVersionStr(v);
+    const version = await this.checkValidVersionStr(v);
     const engineDir = getEngineFolderPath(version);
     // 这里从完备性上来说还要检查 node_modules 和 package.json
     if (fs.existsSync(engineDir)) {
@@ -93,7 +95,7 @@ class EngineModule {
   }
 
   public async remove(v?: string) {
-    const version = this.checkValidVersionStr(v);
+    const version = await this.checkValidVersionStr(v);
     const engineDir = getEngineFolderPath(version);
     if (!fs.existsSync(engineDir)) {
       console.warn('Engine@v', version, 'was not existed');
@@ -253,16 +255,21 @@ class EngineModule {
     return undefined;
   }
 
-  private checkValidVersionStr(version?: string): string {
+  private async checkValidVersionStr(version?: string): Promise<string> {
     // empty checking
     if (!version) {
       throw new Error('Please input a valid version');
     }
-    return version.trim();
+    version = version.trim();
+    if (SUPPORTED_DISTTAGS.includes(version)) {
+      const versions = await this.getTaggedVersions();
+      version = versions[version];
+    }
+    return version;
   }
 
   private async checkEngineVersion(v?: string): Promise<string> {
-    const version = this.checkValidVersionStr(v);
+    let version = await this.checkValidVersionStr(v);
 
     // check installed versions
     const engineList = await this.getInstalledEngines();
