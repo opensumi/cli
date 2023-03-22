@@ -1,5 +1,17 @@
 # OpenSumi CLI
 
+[![NPM Version][npm-image]][npm-url]
+[![NPM downloads][download-image]][download-url]
+
+[npm-image]: https://img.shields.io/npm/v/@opensumi/cli.svg
+[npm-url]: https://www.npmjs.com/package/@opensumi/cli
+[download-image]: https://img.shields.io/npm/dm/@opensumi/cli.svg
+[download-url]: https://npmjs.org/package/@opensumi/cli
+[license-image]: https://img.shields.io/npm/l/@opensumi/cli.svg
+[license-url]: https://github.com/opensumi/core/blob/main/LICENSE
+[license-image]: https://img.shields.io/npm/l/@opensumi/cli.svg
+[license-url]: https://github.com/opensumi/core/blob/main/LICENSE
+
 🛠️ Standard Tooling for OpenSumi Extensions Development
 
 ## Develop
