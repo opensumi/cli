@@ -16,6 +16,7 @@
     "compile": "tsc -p tsconfig.json",
     "watch": "tsc -w -p tsconfig.json",
     "prepublishOnly": "npm run compile",
+    "release": "standard-version",
     "test": "jest"
   },
   "engines": {
@@ -85,6 +86,7 @@
     "get-stream": "^6.0.0",
     "jest": "^26.4.2",
     "pkg": "^4.4.0",
+    "standard-version": "^9.5.0",
     "ts-jest": "^26.4.0"
   },
   "__npminstall_done": false

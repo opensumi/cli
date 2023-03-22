@@ -10,7 +10,8 @@
     "postinstall": "cd packages/cli && yarn",
     "dev": "cd packages/cli && yarn run watch",
     "build": "cd packages/cli && yarn run compile",
-    "ci": "cd packages/cli && yarn test"
+    "ci": "cd packages/cli && yarn test",
+    "release": "cd packages/cli && yarn release"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
