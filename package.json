@@ -1,6 +1,6 @@
 {
   "name": "@opensumi/ext-infra",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Infra for opensumi extension",
   "private": true,
   "engines": {
