@@ -7,9 +7,10 @@
     "node": ">=10.15.0"
   },
   "scripts": {
-    "postinstall": "cd packages/cli && npm i",
-    "ci": "cd packages/cli && npm test",
-    "dev": "cd packages/cli && npm run watch"
+    "postinstall": "cd packages/cli && yarn",
+    "dev": "cd packages/cli && yarn run watch",
+    "build": "cd packages/cli && yarn run compile",
+    "ci": "cd packages/cli && yarn test"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
