@@ -63,14 +63,14 @@ Run sumi <command> --help for detailed usage of given command.
 ```
 $ sumi engine ls-remote
 
-   2.1.0
--> 2.1.1   latest
+2.22.10-rc-1679037411.0   rc
+              -> 2.23.0   latest
 ```
 
 2. Add expected version
 
 ```
-$ sumi engine add 2.20.0
+$ sumi engine add 2.23.0
 ```
 
 ## License
