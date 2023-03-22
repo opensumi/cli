@@ -1,6 +1,5 @@
 import path from 'path';
 import fs from 'fs';
-import { promisify } from 'util';
 
 import execa from 'execa';
 import chalk from 'chalk';
@@ -17,6 +16,7 @@ import { opensumiInfraDir, npmClient, enginePkgName } from '../const';
 import { opensumiConfiguration } from '../config';
 
 export const SUPPORTED_DISTTAGS = ['latest', 'rc', 'next'];
+export const ENGINE_NAME = '@opensumi/cli-engine';
 
 const fsPromise = fs.promises;
 
@@ -84,13 +84,15 @@ class EngineModule {
     if (!fs.existsSync(engineDir)) {
       await fsPromise.mkdir(engineDir);
     }
-
-    const spinner = ora(`Adding engine@v${version}`).start();
+    const spinner = ora(`Adding ${ENGINE_NAME}@v${version}`).start();
     return this.installEngine(engineDir, version).then(async () => {
-      spinner.succeed(`Engine@v${version} was installed`);
+      spinner.succeed(`${ENGINE_NAME}@v${version} was installed`);
       if (!await this.getCurrent()) {
         await this.setCurrent(version);
       }
+    }).catch(async () => {
+      spinner.fail(`${ENGINE_NAME}@v${version} is invalid`);
+      await fsPromise.rm(engineDir, {recursive: true});
     });
   }
 
@@ -98,12 +100,12 @@ class EngineModule {
     const version = await this.checkValidVersionStr(v);
     const engineDir = getEngineFolderPath(version);
     if (!fs.existsSync(engineDir)) {
-      console.warn('Engine@v', version, 'was not existed');
+      console.warn('${ENGINE_NAME}@v', version, 'was not existed');
       return;
     }
-    const spinner = ora(`Removing engine@v${version}`).start();
-    await promisify(rimraf)(engineDir);
-    spinner.succeed(`Engine@v${version} was removed`);
+    const spinner = ora(`Removing ${ENGINE_NAME}@v${version}`).start();
+    await rimraf(engineDir);
+    spinner.succeed(`${ENGINE_NAME}@v${version} was removed`);
     // 重新 init
     this.ready = this.init();
   }
@@ -184,8 +186,13 @@ class EngineModule {
     const files = await fsPromise.readdir(engineDir);
     const fileNameList = await Promise.all(files.map(async (fileName) => {
       const filePath = path.join(engineDir, fileName);
-      const stat = await fsPromise.stat(filePath);
-      return stat.isDirectory() ? fileName : '';
+      try {
+        const stat = await fsPromise.stat(filePath);
+        const hasNodeModuels = await fsPromise.stat(path.join(filePath, 'node_modules'));
+        return stat.isDirectory() && hasNodeModuels ? fileName : '';
+      } catch(e) {
+        return '';
+      }
     }));
     const engineVersionList = fileNameList
       .filter(n => !!n)
@@ -238,7 +245,7 @@ class EngineModule {
       // fallback to the first in engineList
       const current = engineList[0];
       await opensumiConfiguration.replaceContent({ ...config, engine: current });
-      // console.warn(`We are using engine@v${current }`);
+      // console.warn(`We are using ${ENGINE_NAME}@v${current }`);
     }
   }
 
@@ -291,7 +298,7 @@ class EngineModule {
     const { confirm } = await inquirer.prompt<{ confirm: boolean }>({
       type: 'confirm',
       name: 'confirm',
-      message: `Download engine@v${version} now?`,
+      message: `Download ${ENGINE_NAME}@v${version} now?`,
     });
 
     if (confirm) {
