@@ -19,9 +19,7 @@ jobs:
         run: npm install
       - name: Publish to NPM
         run: |
-          VERSION=$(echo ${GITHUB_REF#refs/tags/})
           cd packages/cli
-          npm version $VERSION
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
