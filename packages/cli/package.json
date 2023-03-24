@@ -6,6 +6,11 @@
   "bin": {
     "sumi": "bin/sumi.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:opensumi/cli.git"
+  },
+  "author": "opensumi",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -88,6 +93,5 @@
     "pkg": "^4.4.0",
     "standard-version": "^9.5.0",
     "ts-jest": "^26.4.0"
-  },
-  "__npminstall_done": false
+  }
 }

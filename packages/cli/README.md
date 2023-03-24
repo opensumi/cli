@@ -14,27 +14,6 @@
 
 🛠️ Standard Tooling for OpenSumi Extensions Development
 
-## Develop
-
-```bash
-$ yarn
-$ yarn dev
-```
-
-Test command on the local:
-
-```bash
-$ ./packages/cli/bin/sumi.js <command> [options]
-```
-
-## Publish
-
-```bash
-$ yarn release
-```
-
-Then push commits and tag to the main branch, the `@opensumi/cli@{tag_version}` will release automatically.
-
 ## Usage
 
 Install `@opensumi/cli`:
@@ -94,9 +73,3 @@ $ sumi engine ls-remote
 ```
 $ sumi engine add 2.23.0
 ```
-
-## License
-
-Copyright (c) 2019-present Alibaba Group Holding Limited, Ant Group Co. Ltd.
-
-Licensed under the [MIT](LICENSE) license.
