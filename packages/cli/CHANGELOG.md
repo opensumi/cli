@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/opensumi/cli/compare/v1.0.0...v1.0.1) (2023-04-19)
+
+
+### Bug Fixes
+
+* add missing css-loader ([2f1231e](https://github.com/opensumi/cli/commit/2f1231e6cd384512b2b01fac6e8552c7f941a103))
+
 ## 1.0.0 (2023-03-22)
 
 
