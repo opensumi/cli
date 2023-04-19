@@ -25,6 +25,7 @@
   "dependencies": {
     "chalk": "^3.0.0",
     "clipanion": "^2.3.1",
+    "css-loader": "^3.4.0",
     "denodeify": "^1.2.1",
     "ejs": "^2.7.4",
     "execa": "^4.0.0",
@@ -81,13 +82,11 @@
     "@types/ws": "^7.2.6",
     "@types/yaml": "^1.2.0",
     "@types/yup": "^0.28.0",
-    "css-loader": "^3.4.0",
     "eslint": "^6.5.1",
     "get-stream": "^6.0.0",
     "jest": "^26.4.2",
     "pkg": "^4.4.0",
     "standard-version": "^9.5.0",
     "ts-jest": "^26.4.0"
-  },
-  "__npminstall_done": false
+  }
 }
