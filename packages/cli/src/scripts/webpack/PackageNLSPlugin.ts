@@ -49,7 +49,7 @@ export class PackageNLSPlugin {
         }
 
         const rawDefaultBundle = JSON.stringify(defaultBundle);
-
+        // @ts-ignore
         // 生成 nls.bundle.json
         compilation.assets['nls.bundle.json'] = {
           source: () => rawDefaultBundle,
@@ -69,7 +69,7 @@ export class PackageNLSPlugin {
             if(!languageBundle[relativePath]) {
               languageBundle[relativePath] = [];
             }
-
+            
             const rawKeys = metadata[relativePath].keys;
             const i18nFilePath = path.join(absolutePath, this.outDir, `${relativePath}${I18N_SUFFIX}`);
 
@@ -101,7 +101,7 @@ export class PackageNLSPlugin {
 
           const fileName = getNlsBundleFileName(language);
           const rawBundle = JSON.stringify(languageBundle);
-
+          // @ts-ignore
           compilation.assets[fileName] = {
             source: () => rawBundle,
             size: () => rawBundle.length,

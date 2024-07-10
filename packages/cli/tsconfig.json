@@ -11,6 +11,7 @@
     "experimentalDecorators": true,
     "strict": false,
     "forceConsistentCasingInFileNames": true,
+    "ignoreDeprecations": "5.0",
     "suppressImplicitAnyIndexErrors": true,
     "declaration": true,
     "outDir": "./lib",
